@@ -10,14 +10,19 @@ module.exports = router;
 
 //route for the homepage
 router.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname, '../index.html'));
+	res.render('pages/index');
 });
 
 //route for the about page
 router.get('/about', function(req, res) {
-	res.send('Hello World, I am the about page!');
+	res.render('pages/about');
 });
 
 //route for the contact page
-router.get('/contact');
-router.post('/contact');
+router.get('/contact', function(req, res) {
+	res.render('pages/contact');
+});
+
+router.post('/contact', function(req, res) {
+
+});
