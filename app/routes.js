@@ -10,12 +10,18 @@ module.exports = router;
 
 //route for the homepage
 router.get('/', function(req, res) {
-	res.render('pages/index');
+	res.render('pages/home');
 });
 
 //route for the about page
 router.get('/about', function(req, res) {
-	res.render('pages/about');
+	var users = [
+		{ name: 'Holly', email: 'holly@google.io', avatar: 'http://placekitten.com/300/300' },
+		{ name: 'Chris', email: 'chris@google.io', avatar: 'http://placekitten.com/400/400' },
+		{ name: 'Ado', email: 'ado@google.io', avatar: 'http://placekitten.com/500/500' },
+		{ name: 'Nick', email: 'nick@google.io', avatar: 'http://placekitten.com/700/700' }
+	];
+	res.render('pages/about', { users: users });
 });
 
 //route for the contact page
