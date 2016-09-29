@@ -1,6 +1,7 @@
 //require dependencies
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
+var bodyParser = require('body-parser');
 var app = express();
 var port = 8080;
 
@@ -8,6 +9,8 @@ var port = 8080;
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
+//use the body parser
+app.use(bodyParser.urlencoded());
 //route the app
 var router = require('./app/routes');
 app.use('/', router);
